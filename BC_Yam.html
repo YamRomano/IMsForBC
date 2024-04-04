@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Card with Feedback</title>
+<style>
+
+body {
+    font-family: "Times New Roman", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0077b5; /* Custom background color */
+    background-image: url("back.png");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.46); /* Adjust transparency */
+    /*overflow: hidden; !* Prevent vertical scrollbar *!*/
+}
+
+
+  .card {
+    width: 300px;
+    background-color: rgba(51, 51, 51, 0.7); /* Background color with transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    background-image: url("cardb.jpeg"); /* Add the background image */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    position: relative; /* Make the card position relative */
+  }
+
+  .card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover; /* Ensure the image covers the entire area */
+    filter: brightness(100%); /* Dim the profile picture */
+  }
+
+.card h1 {
+    font-size: 28px; /* Larger font size */
+    margin-bottom: 5px;
+    color: lightblue; /* Light blue text color */
+    font-weight: bold; /* Bold font */
+    text-shadow: 2px 2px 0 darkblue, -2px -2px 0 darkblue, 2px -2px 0 darkblue, -2px 2px 0 darkblue; /* Light blue outline */
+}
+
+.card p {
+    font-size: 24px; /* Larger font size */
+    color: lightblue; /* Light blue text color */
+    font-weight: lighter; /* Bold font */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px darkblue, -1px -1px 1px darkblue, 1px -1px 1px darkblue, -1px 1px 1px darkblue; /* Light blue outline */
+}
+
+.resume-banner {
+    display: inline-block;
+    background-color: lightblue; /* Semi-transparent white background */
+    color: black; /* Text color */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 10px; /* Add some space between buttons */
+}
+
+.social-link {
+    display: inline-block;
+    background-color: #0077b5; /* LinkedIn color */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Add space between links */
+}
+
+.social-link:hover {
+    background-color: #59abe3; /* Light blue LinkedIn hover color */
+}
+
+/* Animation for feedback comments */
+@keyframes moveFeedback {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.feedback-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    background-image: url("commentb.jpg"); /* Background image */
+    background-color: rgba(0, 0, 0, 0.45);
+    background-size: cover;
+    background-repeat: no-repeat; /* Prevent background repetition */
+    background-position: center;
+    background-blend-mode: overlay;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+
+.feedback-container .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind the other content */
+    filter: brightness(100%); /* Adjust the brightness level (e.g., 30%) */
+}
+
+/* Animation for feedback comments */
+@keyframes moveFeedback {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-20px) scale(0.9); opacity: 0.8; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.feedback {
+    position: relative; /* Make the card position relative */
+    margin-bottom: 10px;
+    animation: moveFeedback 5s linear infinite; /* Apply floating animation to all feedback */
+    color: lightblue; /* Light blue text color */
+    text-shadow: 1px 1px 1px black; /* Black contour */
+    font-weight: bold; /* Bold font */
+    font-size: 18px; /* Larger font size */
+}
+
+/* Feedback form styles */
+.feedback-form {
+    margin-top: 20px;
+    position: relative; /* Make the card position relative */
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img src="https://github.com/YamRomano/IMsForBC/raw/main/mec.jpg" alt="Profile Picture">
+  <h1>Yam Romano (26)</h1>
+  <p>Computer Science Student, Ceasarea.</p>
+  <a href="https://www.linkedin.com/in/yam-romano-9a86b9239/" class="social-link">LinkedIn</a>
+  <div class="resume-banner">
+    <a href="Yam Romano CV (2023).docx" download>Resume</a>
+  </div>
+</div>
+
+<div class="feedback-container" id="feedback-container">
+  <!-- Feedback comments -->
+  <div class="feedback" style="animation-delay: 0s;"><div>C, C++.</div></div>
+  <div class="feedback" style="animation-delay: 2s;"><div>MATLAB</div></div>
+  <div class="feedback" style="animation-delay: 4s;"><div>Python</div></div>
+  <div class="feedback" style="animation-delay: 6s;"><div>LINUX </div></div>
+  <div class="feedback" style="animation-delay: 8s;"><div>LATEX</div></div>
+  <div class="feedback" style="animation-delay: 10s;"><div>Experience in Computer Vision</div></div>
+  <div class="feedback" style="animation-delay: 12s;"><div>Approximation Algorithms</div></div>
+  <div class="feedback" style="animation-delay: 12s;"><div>for Pose Estimation </div></div>
+  <div class="feedback" style="animation-delay: 12s;"><div> Problems</div></div>
+  <div class="feedback" style="animation-delay: 14s;"><div>Compression of Big Data </div></div>
+</div>
+
+</body>
+</html>
